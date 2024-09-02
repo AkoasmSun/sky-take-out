@@ -2,6 +2,8 @@ server:
   port: 8080
 
 spring:
+  application:
+    name: springfox-swagger
   profiles:
     active: dev
   main:
@@ -37,3 +39,11 @@ sky:
     admin-ttl: 7200000
     # 设置前端传递过来的令牌名称
     admin-token-name: token
+
+# ===== 自定义swagger配置 ===== #
+swagger:
+  enable: true
+  application-name: ${spring.application.name}
+  application-version: 1.0
+  application-description: springfox swagger 3.0整合Demo
+  try-host: http://localhost:${server.port}
